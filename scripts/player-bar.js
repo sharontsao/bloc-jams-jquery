@@ -1,15 +1,13 @@
 {
-  $('button#play-pause').on('click', function() {
+  $('button#play-pause').on('click', function () {
     helper.playPauseAndUpdate();
     $(this).attr('playState', player.playState);
-    //$('#time-control .total-time').text( player.prettyTime(player.getDuration()));
   });
 
-  $('button#next').on('click', function(){
-    if(player.playState !== 'playing') {return;}
+  $('button#next').on('click', function () {
+    if (player.playState !== 'playing') {return;}
 
-    const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
-    const nextSongIndex = currentSongIndex + 1;
+    const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);      const nextSongIndex = currentSongIndex + 1;
     const nextSong = album.songs[nextSongIndex];
     helper.playPauseAndUpdate(nextSong);
 
@@ -17,17 +15,16 @@
   });
 
   $('button#previous').on('click', function () {
-     if (player.playState !== 'playing') {return;}
+    if (player.playState !== 'playing') {return;}
 
-     const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
-     const previousSongIndex = currentSongIndex - 1;
-     const previousSong = album.songs[previousSongIndex];
-     helper.playPauseAndUpdate(previousSong);
+    const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);      const previousSongIndex = currentSongIndex - 1;
+    const previousSong = album.songs[previousSongIndex];
+    helper.playPauseAndUpdate(previousSong);
 
-     if (previousSongIndex <= album.songs.length) {return;}
-   });
+    if (previousSongIndex <= album.songs.length) {return;}
+  });
 
-  $('#time-control input').on('input', function(event) {
+  $('#time-control input').on('input', function (event) {
     player.skipTo(event.target.value);
   });
 
@@ -35,7 +32,7 @@
     if (player.playState !== 'playing') {return;}
       const currentTime = player.getTime();
       const duration = player.getDuration();
-      const percent = (currentTime/duration) * 100;
+      const percent = (currentTime / duration) * 100;
       $('#time-control .current-time').text(player.prettyTime(currentTime));
       $('#time-control input').val(percent);
   }, 1000);
