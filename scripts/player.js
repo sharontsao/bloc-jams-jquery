@@ -1,3 +1,4 @@
+
 class Player {
   constructor () {
     this.currentlyPlaying = album.songs[0];
@@ -39,7 +40,7 @@ class Player {
   }
 
   skipTo (percent) {
-    if (this.playState !== 'playing') { return; }
+    if (this.playState !== 'playing') { return }
     this.soundObject.setTime( (percent / 100) * this.soundObject.getDuration() );
   }
 
@@ -48,9 +49,9 @@ class Player {
     this.soundObject.setVolume(percent);
   }
 
-  prettyTime(timeInSeconds) {
-    const min = Math.floor(timeInSeconds / 60);
-    const sec = Math.floor(timeInSeconds % 60);
+  prettyTime (timeInSeconds) {
+    var min = Math.floor(timeInSeconds / 60);
+    var sec = Math.floor(timeInSeconds % 60);
     return (min + ":" + sec)
   }
 }
