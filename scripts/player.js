@@ -51,7 +51,7 @@ class Player {
   prettyTime(timeInSeconds) {
     const min = Math.floor(timeInSeconds / 60);
     const sec = Math.floor(timeInSeconds % 60);
-    return (min + ":" + sec);
+    return (min + ":" + sec)
   }
 }
 
