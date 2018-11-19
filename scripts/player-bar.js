@@ -44,4 +44,3 @@
     player.setVolume(event.target.value);
   });
 }
-
