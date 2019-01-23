@@ -1,2 +1,3 @@
-BLOC JAMS
-is a fully functional music player made with jQuery. 
+# BLOC JAMS
+
+is a music player made with jQuery. 
